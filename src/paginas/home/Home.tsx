@@ -9,12 +9,12 @@ function Home() {
   const { nome, setNome } = useContext(UserContext);
     return (
         <>
-        <div className="bg-[#cc1111] flex justify-center">
+        <div className="bg-[#000000] flex justify-center">
           <div className='container grid grid-cols-2 text-white'>
             <div className="flex flex-col gap-4 items-center justify-center py-4">
               <h2 className='text-5xl font-bold'>Seja bem-vinde:</h2>
               <h2 className='text-3xl font-bold' > {nome}</h2>
-              <Link to="/login" className='rounded bg-[#F5DABF] text-[#FF8100] py-2 px-4'>
+              <Link to="/login" className='rounded bg-[#cc1111] text-[#000000] py-2 px-4'>
           Voltar 
         </Link>
             </div>
