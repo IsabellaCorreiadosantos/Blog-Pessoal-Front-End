@@ -1,0 +1,13 @@
+.fundoLogin {
+    background-image: url(../../assets/login.jpg);
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .telaLogin {
+    background-image: url(https://criticalhits.com.br/wp-content/uploads/2021/12/yuji.jpg);
+    background-repeat: no-repeat;
+  } 
