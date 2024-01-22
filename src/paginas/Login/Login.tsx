@@ -36,6 +36,7 @@ function login(e: ChangeEvent<HTMLFormElement>) {
 
   return (
     <>
+    
       <div className="grid grid-cols-1 lg:grid-cols-2 h-screen place-items-center font-bold telaLogin">
         <form className="flex justify-center items-center flex-col w-1/2 gap-4" onSubmit={login}>
           <h2 className="text-slate-900 text-5xl ">Entrar</h2>
@@ -50,6 +51,7 @@ function login(e: ChangeEvent<HTMLFormElement>) {
               value={usuarioLogin.usuario} 
               onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
             />
+            
           </div>
           <div className="flex flex-col w-full">
             <label htmlFor="senha">Senha</label>
