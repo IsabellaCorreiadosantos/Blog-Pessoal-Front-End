@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import Usuario from '../../model/Usuario'
 import { cadastrarUsuario } from '../../services/Service'
 import './Cadastro.css'
+import { toastAlerta } from '../../util/toastAlerta'
 
 function Cadastro() {
 
@@ -54,14 +55,14 @@ function Cadastro() {
 
       try {
         await cadastrarUsuario(`/usuarios/cadastrar`, usuario, setUsuarioResposta)
-        alert('Usuário cadastrado com sucesso')
+        toastAlerta('Usuário cadastrado com sucesso', 'sucesso')
 
       } catch (error) {
-        alert('Erro ao cadastrar o Usuário')
+        toastAlerta('Usuário cadastrado com sucesso', 'sucesso')
       }
 
     } else {
-      alert('Dados inconsistentes. Verifique as informações de cadastro.')
+      toastAlerta('Dados inconsistentes. Verifique as informações de cadastro.', 'erro')
       setUsuario({ ...usuario, senha: "" }) // Reinicia o campo de Senha
       setConfirmaSenha("")                  // Reinicia o campo de Confirmar Senha
     }
@@ -69,11 +70,10 @@ function Cadastro() {
 
   return (
     <>
-    <div className="fundoCadastro hidden lg:block">
       <div className="grid grid-cols-1 lg:grid-cols-2 h-screen place-items-center font-bold">
-        
+        <div className="fundoCadastro hidden lg:block"></div>
         <form className='flex justify-center items-center flex-col w-2/3 gap-3' onSubmit={cadastrarNovoUsuario}>
-          <h2 className='text-slate-900 text-5xl text-white'>Cadastrar</h2>
+          <h2 className='text-slate-900 text-5xl'>Cadastrar</h2>
           <div className="flex flex-col w-full">
             <label htmlFor="nome">Nome</label>
             <input
@@ -144,9 +144,8 @@ function Cadastro() {
           </div>
         </form>
       </div>
-      </div>
     </>
   )
 }
 
-export default Cadastro;
+export default Cadastro
